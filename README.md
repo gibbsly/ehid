@@ -65,4 +65,4 @@ The Types of damage you can detect are
 > `bypasses_magic` | starvation
 
 ## Examples
-I have provided as example in the `example` namespace. You can safely remove it. 
+I have provided an example in the `example` namespace. You can safely remove it. 
