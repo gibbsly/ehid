@@ -64,3 +64,6 @@ The Types of damage you can detect are
 
 ## Examples
 I have provided an example in the `example` namespace. You can safely remove it. 
+
+## Footnote
+If you need this system to start listeneing in the same tick that you add to the listen score, I reccomend enabling this datapack last. If you don't know what that means, you probably don't need to worry about it.
