@@ -6,10 +6,9 @@ This is a utility made to identify entities, and run functions when a player hit
 ## IDs
 This system assigns an id to every entity not in the entity tag `#entityid:id_skip`. IDs are stored in the scoreboard `entityid` as well as bit by bit in scoreboards `entityid.<0..15>` and in the entities `Tags`, where it is scored in tags in the format `entityid.<0..15>.[0|1]`. 
 
-Projectiles gain the ID of their owner, projectiles are determined with the #entityid:projectile tag. 
+Projectiles gain the ID of their owner, projectiles are determined with the `#entityid:projectile` tag. 
 
 ## Use
-
 ### Enabling/Disabling listening
 For performance reasons, this system does not run unless it is enabled. 
 
@@ -39,7 +38,6 @@ Before these function tags are run, the attacker and receiver are tagged with `e
 When the tags are run, it will run everything in the tags, so you need something in your system that tracks if it is listening.
 
 ### Detecting damage types
-
 This system also tracks the type of damage that the player received, you can check for damage type with a selector.
 
 `[advancements={entityid:[entity_hurt_player|player_hurt_entity]={<type>=true}}]`
