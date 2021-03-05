@@ -34,7 +34,7 @@ If the system is currently listening some function tags will be called when trig
 
 > `#entity_hurt_player/as_attacker`	| runs as the entity that hit the player
 
-Before these function tags are run, the attacker and receiver are tagged with `entityid.[attacker|receiver]`. If the trigger is `entity_hurt_player` and the damage type is `is_projectile`, all projectiles within 8 blocks that are owned by the attacker will receive the tag `entityid.attacker.projectile`
+Before these function tags are run, the attacker and receiver are tagged with `entityid.[attacker|receiver]`. If the trigger is `entity_hurt_player` and the damage type is `is_projectile`, all projectiles within 8 blocks that are owned by the attacker will receive the tag `entityid.attacker.projectile`.
 
 When the tags are run, it will run everything in the tags, so you need something in your system that tracks if it is listening.
 
