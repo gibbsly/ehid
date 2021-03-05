@@ -23,15 +23,15 @@ The reason for this is to allow multiple systems to easily enable/disable listen
 If the system is currently listening some function tags will be called when triggered. These function tags are listed below. (these function tags are in the minecraft namespace)
 
 > `#player_hurt_entity/as_entity`	| runs as the entity that was hit by the player before any player handling happens
-
+>
 > `#player_hurt_entity/as_attacker`	| runs as the player when they attack an entity
-
+>
 > `#player_hurt_entity/as_receiver`	| runs as the entity that was hit by the player
 
 > `#entity_hurt_player/as_entity`	| runs as the entity that hit the player before any player handling happens
-
+>
 > `#entity_hurt_player/as_receiver`	| runs as the player when hit by an entity
-
+>
 > `#entity_hurt_player/as_attacker`	| runs as the entity that hit the player
 
 Before these function tags are run, the attacker and receiver are tagged with `entityid.[attacker|receiver]`. If the trigger is `entity_hurt_player` and the damage type is `is_projectile`, all projectiles within 8 blocks that are owned by the attacker will receive the tag `entityid.attacker.projectile`.
@@ -47,19 +47,22 @@ This system also tracks the type of damage that the player received, you can che
 The Types of damage you can detect are 
 
 > `typeless` | true if none other are
-
+>
 > `bypasses_armor` | damage types that ignore armor
-  
+>
 > `is_explosion` | explosive damage
-  
+>
 > `is_fire` | fire damage
-  
+>
 > `is_magic` | magic damage, effects mostly
-  
+>
 > `is_projectile` | projectiles 
-  
+>
 > `is_lightning` | lightning
-  
+>
 > `bypasses_invulnerability` | void
-  
+>
 > `bypasses_magic` | starvation
+
+## Examples
+I have provided as example in the `example` namespace. You can safely remove it. 
