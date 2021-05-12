@@ -12,15 +12,15 @@ Projectiles gain the ID of their owner, projectiles are determined with the [`#e
 ### Enabling/Disabling listening
 For performance reasons, this system does not run unless it is enabled. 
 
-To enable listening for `entity_hurt_player` you add 1 to the score `ehp_listen`, and to stop listening, remove 1 from the score `ehp_listen`
+To enable listening for `entity_hurt_player` you **add** 1 to the score `ehp_listen`, and to stop listening, **remove** 1 from the score `ehp_listen`
 
-To enable listening for `player_hurt_entity` you add 1 to the score `phe_listen`, and to stop listening, remove 1 from the score `phe_listen`
+To enable listening for `player_hurt_entity` you **add** 1 to the score `phe_listen`, and to stop listening, **remove** 1 from the score `phe_listen`
 
-To enable listening for `entity_killed_player` you add 1 to the score `ekp_listen`, and to stop listening, remove 1 from the score `ekp_listen`
+To enable listening for `entity_killed_player` you **add** 1 to the score `ekp_listen`, and to stop listening, **remove** 1 from the score `ekp_listen`
 
-To enable listening for `player_killed_entity` you add 1 to the score `pke_listen`, and to stop listening, remove 1 from the score `pke_listen`
+To enable listening for `player_killed_entity` you **add** 1 to the score `pke_listen`, and to stop listening, **remove** 1 from the score `pke_listen`
 
-The reason for this is to allow multiple systems to easily enable/disable listening without having to know if it was listening previously. 
+### If you are enabling or disabling the listen, please **ADD** or **REMOVE** 1 from the score, do ***NOT*** **SET**. The reason for this is to allow multiple systems to easily enable/disable listening without having to know if it was listening previously. If you set the score something can go wrong, the **INTENDED** use is for you to **ADD** and **REMOVE**.
 
 ### Using the triggers
 If the system is currently listening some function tags will be called when triggered. These function tags are listed below. (these function tags are in the minecraft namespace)
