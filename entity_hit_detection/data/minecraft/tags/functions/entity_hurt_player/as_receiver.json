@@ -1,5 +1,8 @@
 {
 	"values": [
-		"example:chestplate/as_receiver"
+		{
+			"id": "example:chestplate/as_receiver",
+			"required": false
+		}
 	]
 }
