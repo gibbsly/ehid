@@ -4,7 +4,7 @@
 This is a utility made to identify entities, and run functions when a player hits/kills an entity or when an entity hits/kills a player.
 
 ## IDs
-This system assigns an id to every entity not in the entity tag [`#entityid:id_skip`](https://github.com/gibbsly/ehid/blob/main/entity_hit_detection/data/entityid/tags/entity_types/id_skip.json). IDs are stored in the scoreboard `entityid` as well as bit by bit in scoreboards `entityid.<0..15>` and in the entities `Tags`, where it is scored in tags in the format `entityid.<0..15>.[0|1]`. 
+This system assigns an id to every entity not in the entity tag [`#entityid:id_skip`](https://github.com/gibbsly/ehid/blob/main/entity_hit_detection/data/entityid/tags/entity_types/id_skip.json). IDs are stored in the scoreboard `entityid` and in the entities `Tags`, where it is scored in tags bit by bit in the format `entityid.<0..15>.[0|1]`. 
 
 Projectiles gain the ID of their owner, projectiles are determined with the [`#entityid:projectile`](https://github.com/gibbsly/ehid/blob/main/entity_hit_detection/data/entityid/tags/entity_types/projectile.json) tag. 
 
@@ -56,23 +56,9 @@ This system also tracks the type of damage that the player received, you can che
 
 The Types of damage you can detect are 
 
-> `typeless` | true if none other are
+> `tagless` | true if none other are
 >
-> `bypasses_armor` | damage types that ignore armor
->
-> `is_explosion` | explosive damage
->
-> `is_fire` | fire damage
->
-> `is_magic` | magic damage, effects mostly
->
-> `is_projectile` | projectiles 
->
-> `is_lightning` | lightning
->
-> `bypasses_invulnerability` | void
->
-> `bypasses_magic` | starvation
+> `<all vanilla damage type tags>` | `always_hurts_ender_dragons, always_most_significant_fall, always_triggers_silverfish, avoids_guardian_thorns, burns_armor_stands, bypasses_armor, bypasses_effects, bypasses_enchantments, bypasses_invulnerability, bypasses_resistance, bypasses_shield, damages_helmet, ignites_armor_stands, is_drowning, is_explosion, is_fall, is_fire, is_freezing, is_lightning, is_projectile, no_anger, no_impact, witch_resistant_to, wither_immune_to`
 
 ### `player_killed_entity` usage
 If a player kills an entity and listening for "player_killed_entity" is enabled, the only thing this system can do is tell you the ID of the entity that the player killed was, as well as telling you the type of entity. 
