@@ -1,6 +1,6 @@
 import json
-from pathlib import Path
 from os import path
+from pathlib import Path
 
 script = Path(__file__)
 name, ext = path.splitext(path.basename(script))
@@ -203,7 +203,7 @@ def tag_template(id, damage_type):
     return structure
 
 
-def bit_template_true(id, bit):
+def bit_template_true_player(id, bit):
     structure = {
         "trigger": "minecraft:" + id,
         "conditions": {
@@ -214,11 +214,33 @@ def bit_template_true(id, bit):
     return structure
 
 
-def bit_template_false(id, bit):
+def bit_template_false_player(id, bit):
     structure = {
         "trigger": "minecraft:" + id,
         "conditions": {
             "damage": {"source_entity": {"nbt": "{Tags:[entityid." + bit + ".0]}"}}
+        }
+    }
+
+    return structure
+
+
+def bit_template_true_entity(id, bit):
+    structure = {
+        "trigger": "minecraft:" + id,
+        "conditions": {
+            "entity": {"nbt": "{Tags:[entityid." + bit + ".1]}"}
+        }
+    }
+
+    return structure
+
+
+def bit_template_false_entity(id, bit):
+    structure = {
+        "trigger": "minecraft:" + id,
+        "conditions": {
+            "entity": {"nbt": "{Tags:[entityid." + bit + ".0]}"}
         }
     }
 
@@ -273,8 +295,12 @@ for advancement in advancement_types:
             current_advancement["requirements"].append(entity_requirements)
 
         for bit in range(num_bits):
-            current_advancement["criteria"]["bit" + str(bit)] = bit_template_true(advancement["id"], str(bit))
-            current_advancement["criteria"]["!bit" + str(bit)] = bit_template_false(advancement["id"], str(bit))
+            if (advancement["id"] == "entity_hurt_player") or (advancement["id"] == "entity_killed_player"):
+                current_advancement["criteria"]["bit" + str(bit)] = bit_template_true_player(advancement["id"], str(bit))
+                current_advancement["criteria"]["!bit" + str(bit)] = bit_template_false_player(advancement["id"], str(bit))
+            elif (advancement["id"] == "player_hurt_entity") or (advancement["id"] == "player_killed_entity"):
+                current_advancement["criteria"]["bit" + str(bit)] = bit_template_true_entity(advancement["id"], str(bit))
+                current_advancement["criteria"]["!bit" + str(bit)] = bit_template_false_entity(advancement["id"], str(bit))
             current_advancement["requirements"].append(["bit" + str(bit), "!bit" + str(bit)])
 
         json_structure = json.dumps(current_advancement, indent=4)
