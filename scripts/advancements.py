@@ -8,13 +8,6 @@ name, ext = path.splitext(path.basename(script))
 ehid_dir = script.parents[1].absolute()
 advancements_dir = path.join(ehid_dir, "entity_hit_detection/data/entityid/advancement")
 
-advancement_types = [
-    {"id": "entity_hurt_player", "check": "damage"},
-    {"id": "entity_killed_player", "check": "killing_blow"},
-    {"id": "player_hurt_entity", "check": "damage"},
-    {"id": "player_killed_entity", "check": "killing_blow"}
-]
-
 damage_tags = [
     "always_hurts_ender_dragons",
     "always_kills_armor_stands",
@@ -41,6 +34,7 @@ damage_tags = [
     "is_lightning",
     "is_player_attack",
     "is_projectile",
+    "mace_smash",
     "no_anger",
     "no_impact",
     "no_knockback",
@@ -61,19 +55,38 @@ entities = [
     "bee",
     "blaze",
     "block_display",
-    "boat",
+    "oak_boat",
+    "spruce_boat",
+    "birch_boat",
+    "jungle_boat",
+    "acacia_boat",
+    "cherry_boat",
+    "dark_oak_boat",
+    "pale_oak_boat",
+    "mangrove_boat",
+    "bamboo_raft",
     "bogged",
     "breeze",
     "breeze_wind_charge",
     "camel",
     "cat",
     "cave_spider",
-    "chest_boat",
+    "oak_chest_boat",
+    "spruce_chest_boat",
+    "birch_chest_boat",
+    "jungle_chest_boat",
+    "acacia_chest_boat",
+    "cherry_chest_boat",
+    "dark_oak_chest_boat",
+    "pale_oak_chest_boat",
+    "mangrove_chest_boat",
+    "bamboo_chest_raft",
     "chest_minecart",
     "chicken",
     "cod",
     "command_block_minecart",
     "cow",
+    "creaking",
     "creeper",
     "dolphin",
     "donkey",
@@ -135,7 +148,8 @@ entities = [
     "pillager",
     "player",
     "polar_bear",
-    "potion",
+    "splash_potion",
+    "lingering_potion",
     "pufferfish",
     "rabbit",
     "ravager",
@@ -186,67 +200,6 @@ entities = [
 num_bits = 16
 
 
-def tagless_template(damage_type):
-    structure = {"expected": False, "id": damage_type}
-
-    return structure
-
-
-def tag_template(id, damage_type):
-    structure = {
-        "trigger": "minecraft:" + id,
-        "conditions": {
-            "damage": {"type": {"tags": [{"expected": True, "id": damage_type}]}}
-        },
-    }
-
-    return structure
-
-
-def bit_template_true_player(id, bit):
-    structure = {
-        "trigger": "minecraft:" + id,
-        "conditions": {
-            "damage": {"source_entity": {"nbt": "{Tags:[entityid." + bit + ".1]}"}}
-        }
-    }
-
-    return structure
-
-
-def bit_template_false_player(id, bit):
-    structure = {
-        "trigger": "minecraft:" + id,
-        "conditions": {
-            "damage": {"source_entity": {"nbt": "{Tags:[entityid." + bit + ".0]}"}}
-        }
-    }
-
-    return structure
-
-
-def bit_template_true_entity(id, bit):
-    structure = {
-        "trigger": "minecraft:" + id,
-        "conditions": {
-            "entity": {"nbt": "{Tags:[entityid." + bit + ".1]}"}
-        }
-    }
-
-    return structure
-
-
-def bit_template_false_entity(id, bit):
-    structure = {
-        "trigger": "minecraft:" + id,
-        "conditions": {
-            "entity": {"nbt": "{Tags:[entityid." + bit + ".0]}"}
-        }
-    }
-
-    return structure
-
-
 def player_killed_entity(entity):
     structure = {
         "trigger": "minecraft:player_killed_entity",
@@ -258,13 +211,13 @@ def player_killed_entity(entity):
     return structure
 
 
-def ehid_advancement(id, check):
+def ehid_advancement(id):
     structure = {
         "criteria": {
             "entity": {"trigger": "minecraft:" + id},
             "tagless": {
                 "trigger": "minecraft:" + id,
-                "conditions": {check: {"type": {"tags": []}}},
+                "conditions": {},
             }
         },
         "requirements": [
@@ -276,18 +229,38 @@ def ehid_advancement(id, check):
     return structure
 
 
-for advancement in advancement_types:
-    with open(path.join(advancements_dir, advancement["id"] + ".json"), "w") as loaded_advancement:
-        current_advancement = ehid_advancement(advancement["id"], advancement["check"])
+advancement_types = [
+    "entity_hurt_player",
+    "entity_killed_player",
+    "player_hurt_entity",
+    "player_killed_entity"
+]
 
+for advancement in advancement_types:
+    with open(path.join(advancements_dir, advancement + ".json"), "w") as loaded_advancement:
+        current_advancement = ehid_advancement(advancement)
+
+        tagless_conditions = []
         tag_requirements = ["tagless"]
         for damage_type in damage_tags:
-            current_advancement["criteria"]["tagless"]["conditions"][advancement["check"]]["type"]["tags"].append(tagless_template(damage_type))
-            current_advancement["criteria"][damage_type] = tag_template(advancement["id"], damage_type)
+            tagless_conditions.append({"expected": False, "id": damage_type})
+            current_advancement["criteria"][damage_type] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {}
+                }
             tag_requirements.append(damage_type)
         current_advancement["requirements"].append(tag_requirements)
 
-        if advancement["id"] == "player_killed_entity":
+        if (advancement == "entity_hurt_player") or (advancement == "player_hurt_entity"):
+            for damage_type in damage_tags:
+                current_advancement["criteria"][damage_type]["conditions"] = {"damage": {"type": {"tags": [{"expected": True, "id": damage_type}]}}}
+            current_advancement["criteria"]["tagless"]["conditions"] = {"damage": {"type": {"tags": tagless_conditions}}}
+        elif (advancement == "entity_killed_player") or (advancement == "player_killed_entity"):
+            for damage_type in damage_tags:
+                current_advancement["criteria"][damage_type]["conditions"] = {"killing_blow": {"tags": [{"expected": True, "id": damage_type}]}}
+            current_advancement["criteria"]["tagless"]["conditions"] = {"killing_blow": {"tags": tagless_conditions}}
+
+        if (advancement == "player_killed_entity"):
             entity_requirements = []
             for entity in entities:
                 current_advancement["criteria"][entity] = player_killed_entity(entity)
@@ -295,12 +268,45 @@ for advancement in advancement_types:
             current_advancement["requirements"].append(entity_requirements)
 
         for bit in range(num_bits):
-            if (advancement["id"] == "entity_hurt_player") or (advancement["id"] == "entity_killed_player"):
-                current_advancement["criteria"]["bit" + str(bit)] = bit_template_true_player(advancement["id"], str(bit))
-                current_advancement["criteria"]["!bit" + str(bit)] = bit_template_false_player(advancement["id"], str(bit))
-            elif (advancement["id"] == "player_hurt_entity") or (advancement["id"] == "player_killed_entity"):
-                current_advancement["criteria"]["bit" + str(bit)] = bit_template_true_entity(advancement["id"], str(bit))
-                current_advancement["criteria"]["!bit" + str(bit)] = bit_template_false_entity(advancement["id"], str(bit))
+            if (advancement == "entity_hurt_player"):
+                current_advancement["criteria"]["bit" + str(bit)] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {
+                        "damage": {"source_entity": {"nbt": "{Tags:[entityid." + str(bit) + ".1]}"}}
+                    }
+                }
+                current_advancement["criteria"]["!bit" + str(bit)] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {
+                        "damage": {"source_entity": {"nbt": "{Tags:[entityid." + str(bit) + ".0]}"}}
+                    }
+                }
+            elif (advancement == "entity_killed_player"):
+                current_advancement["criteria"]["bit" + str(bit)] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {
+                        "killing_blow": {"source_entity": {"nbt": "{Tags:[entityid." + str(bit) + ".1]}"}}
+                    }
+                }
+                current_advancement["criteria"]["!bit" + str(bit)] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {
+                        "killing_blow": {"source_entity": {"nbt": "{Tags:[entityid." + str(bit) + ".0]}"}}
+                    }
+                }
+            elif (advancement == "player_hurt_entity") or (advancement == "player_killed_entity"):
+                current_advancement["criteria"]["bit" + str(bit)] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {
+                        "entity": {"nbt": "{Tags:[entityid." + str(bit) + ".1]}"}
+                    }
+                }
+                current_advancement["criteria"]["!bit" + str(bit)] = {
+                    "trigger": "minecraft:" + advancement,
+                    "conditions": {
+                        "entity": {"nbt": "{Tags:[entityid." + str(bit) + ".0]}"}
+                    }
+                }
             current_advancement["requirements"].append(["bit" + str(bit), "!bit" + str(bit)])
 
         json_structure = json.dumps(current_advancement, indent=4)

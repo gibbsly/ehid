@@ -111,6 +111,10 @@
                             },
                             {
                                 "expected": false,
+                                "id": "mace_smash"
+                            },
+                            {
+                                "expected": false,
                                 "id": "no_anger"
                             },
                             {
@@ -517,6 +521,21 @@
                 }
             }
         },
+        "mace_smash": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "tags": [
+                            {
+                                "expected": true,
+                                "id": "mace_smash"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
         "no_anger": {
             "trigger": "minecraft:player_hurt_entity",
             "conditions": {
@@ -910,6 +929,7 @@
             "is_lightning",
             "is_player_attack",
             "is_projectile",
+            "mace_smash",
             "no_anger",
             "no_impact",
             "no_knockback",

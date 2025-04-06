@@ -7,625 +7,576 @@
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
                 "killing_blow": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": false,
-                                "id": "always_hurts_ender_dragons"
-                            },
-                            {
-                                "expected": false,
-                                "id": "always_kills_armor_stands"
-                            },
-                            {
-                                "expected": false,
-                                "id": "always_most_significant_fall"
-                            },
-                            {
-                                "expected": false,
-                                "id": "always_triggers_silverfish"
-                            },
-                            {
-                                "expected": false,
-                                "id": "avoids_guardian_thorns"
-                            },
-                            {
-                                "expected": false,
-                                "id": "burn_from_stepping"
-                            },
-                            {
-                                "expected": false,
-                                "id": "burns_armor_stands"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_armor"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_effects"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_enchantments"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_invulnerability"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_resistance"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_shield"
-                            },
-                            {
-                                "expected": false,
-                                "id": "bypasses_wolf_armor"
-                            },
-                            {
-                                "expected": false,
-                                "id": "can_break_armor_stand"
-                            },
-                            {
-                                "expected": false,
-                                "id": "damages_helmet"
-                            },
-                            {
-                                "expected": false,
-                                "id": "ignites_armor_stands"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_drowning"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_explosion"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_fall"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_fire"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_freezing"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_lightning"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_player_attack"
-                            },
-                            {
-                                "expected": false,
-                                "id": "is_projectile"
-                            },
-                            {
-                                "expected": false,
-                                "id": "no_anger"
-                            },
-                            {
-                                "expected": false,
-                                "id": "no_impact"
-                            },
-                            {
-                                "expected": false,
-                                "id": "no_knockback"
-                            },
-                            {
-                                "expected": false,
-                                "id": "panic_causes"
-                            },
-                            {
-                                "expected": false,
-                                "id": "panic_environmental_causes"
-                            },
-                            {
-                                "expected": false,
-                                "id": "witch_resistant_to"
-                            },
-                            {
-                                "expected": false,
-                                "id": "wither_immune_to"
-                            }
-                        ]
-                    }
+                    "tags": [
+                        {
+                            "expected": false,
+                            "id": "always_hurts_ender_dragons"
+                        },
+                        {
+                            "expected": false,
+                            "id": "always_kills_armor_stands"
+                        },
+                        {
+                            "expected": false,
+                            "id": "always_most_significant_fall"
+                        },
+                        {
+                            "expected": false,
+                            "id": "always_triggers_silverfish"
+                        },
+                        {
+                            "expected": false,
+                            "id": "avoids_guardian_thorns"
+                        },
+                        {
+                            "expected": false,
+                            "id": "burn_from_stepping"
+                        },
+                        {
+                            "expected": false,
+                            "id": "burns_armor_stands"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_armor"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_effects"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_enchantments"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_invulnerability"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_resistance"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_shield"
+                        },
+                        {
+                            "expected": false,
+                            "id": "bypasses_wolf_armor"
+                        },
+                        {
+                            "expected": false,
+                            "id": "can_break_armor_stand"
+                        },
+                        {
+                            "expected": false,
+                            "id": "damages_helmet"
+                        },
+                        {
+                            "expected": false,
+                            "id": "ignites_armor_stands"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_drowning"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_explosion"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_fall"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_fire"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_freezing"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_lightning"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_player_attack"
+                        },
+                        {
+                            "expected": false,
+                            "id": "is_projectile"
+                        },
+                        {
+                            "expected": false,
+                            "id": "mace_smash"
+                        },
+                        {
+                            "expected": false,
+                            "id": "no_anger"
+                        },
+                        {
+                            "expected": false,
+                            "id": "no_impact"
+                        },
+                        {
+                            "expected": false,
+                            "id": "no_knockback"
+                        },
+                        {
+                            "expected": false,
+                            "id": "panic_causes"
+                        },
+                        {
+                            "expected": false,
+                            "id": "panic_environmental_causes"
+                        },
+                        {
+                            "expected": false,
+                            "id": "witch_resistant_to"
+                        },
+                        {
+                            "expected": false,
+                            "id": "wither_immune_to"
+                        }
+                    ]
                 }
             }
         },
         "always_hurts_ender_dragons": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "always_hurts_ender_dragons"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "always_hurts_ender_dragons"
+                        }
+                    ]
                 }
             }
         },
         "always_kills_armor_stands": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "always_kills_armor_stands"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "always_kills_armor_stands"
+                        }
+                    ]
                 }
             }
         },
         "always_most_significant_fall": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "always_most_significant_fall"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "always_most_significant_fall"
+                        }
+                    ]
                 }
             }
         },
         "always_triggers_silverfish": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "always_triggers_silverfish"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "always_triggers_silverfish"
+                        }
+                    ]
                 }
             }
         },
         "avoids_guardian_thorns": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "avoids_guardian_thorns"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "avoids_guardian_thorns"
+                        }
+                    ]
                 }
             }
         },
         "burn_from_stepping": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "burn_from_stepping"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "burn_from_stepping"
+                        }
+                    ]
                 }
             }
         },
         "burns_armor_stands": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "burns_armor_stands"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "burns_armor_stands"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_armor": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_armor"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_armor"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_effects": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_effects"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_effects"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_enchantments": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_enchantments"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_enchantments"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_invulnerability": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_invulnerability"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_invulnerability"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_resistance": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_resistance"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_resistance"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_shield": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_shield"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_shield"
+                        }
+                    ]
                 }
             }
         },
         "bypasses_wolf_armor": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "bypasses_wolf_armor"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "bypasses_wolf_armor"
+                        }
+                    ]
                 }
             }
         },
         "can_break_armor_stand": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "can_break_armor_stand"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "can_break_armor_stand"
+                        }
+                    ]
                 }
             }
         },
         "damages_helmet": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "damages_helmet"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "damages_helmet"
+                        }
+                    ]
                 }
             }
         },
         "ignites_armor_stands": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "ignites_armor_stands"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "ignites_armor_stands"
+                        }
+                    ]
                 }
             }
         },
         "is_drowning": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_drowning"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_drowning"
+                        }
+                    ]
                 }
             }
         },
         "is_explosion": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_explosion"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_explosion"
+                        }
+                    ]
                 }
             }
         },
         "is_fall": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_fall"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_fall"
+                        }
+                    ]
                 }
             }
         },
         "is_fire": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_fire"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_fire"
+                        }
+                    ]
                 }
             }
         },
         "is_freezing": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_freezing"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_freezing"
+                        }
+                    ]
                 }
             }
         },
         "is_lightning": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_lightning"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_lightning"
+                        }
+                    ]
                 }
             }
         },
         "is_player_attack": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_player_attack"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_player_attack"
+                        }
+                    ]
                 }
             }
         },
         "is_projectile": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "is_projectile"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "is_projectile"
+                        }
+                    ]
+                }
+            }
+        },
+        "mace_smash": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "mace_smash"
+                        }
+                    ]
                 }
             }
         },
         "no_anger": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "no_anger"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "no_anger"
+                        }
+                    ]
                 }
             }
         },
         "no_impact": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "no_impact"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "no_impact"
+                        }
+                    ]
                 }
             }
         },
         "no_knockback": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "no_knockback"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "no_knockback"
+                        }
+                    ]
                 }
             }
         },
         "panic_causes": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "panic_causes"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "panic_causes"
+                        }
+                    ]
                 }
             }
         },
         "panic_environmental_causes": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "panic_environmental_causes"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "panic_environmental_causes"
+                        }
+                    ]
                 }
             }
         },
         "witch_resistant_to": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "witch_resistant_to"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "witch_resistant_to"
+                        }
+                    ]
                 }
             }
         },
         "wither_immune_to": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
-                    "type": {
-                        "tags": [
-                            {
-                                "expected": true,
-                                "id": "wither_immune_to"
-                            }
-                        ]
-                    }
+                "killing_blow": {
+                    "tags": [
+                        {
+                            "expected": true,
+                            "id": "wither_immune_to"
+                        }
+                    ]
                 }
             }
         },
         "bit0": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.0.1]}"
                     }
@@ -635,7 +586,7 @@
         "!bit0": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.0.0]}"
                     }
@@ -645,7 +596,7 @@
         "bit1": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.1.1]}"
                     }
@@ -655,7 +606,7 @@
         "!bit1": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.1.0]}"
                     }
@@ -665,7 +616,7 @@
         "bit2": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.2.1]}"
                     }
@@ -675,7 +626,7 @@
         "!bit2": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.2.0]}"
                     }
@@ -685,7 +636,7 @@
         "bit3": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.3.1]}"
                     }
@@ -695,7 +646,7 @@
         "!bit3": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.3.0]}"
                     }
@@ -705,7 +656,7 @@
         "bit4": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.4.1]}"
                     }
@@ -715,7 +666,7 @@
         "!bit4": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.4.0]}"
                     }
@@ -725,7 +676,7 @@
         "bit5": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.5.1]}"
                     }
@@ -735,7 +686,7 @@
         "!bit5": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.5.0]}"
                     }
@@ -745,7 +696,7 @@
         "bit6": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.6.1]}"
                     }
@@ -755,7 +706,7 @@
         "!bit6": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.6.0]}"
                     }
@@ -765,7 +716,7 @@
         "bit7": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.7.1]}"
                     }
@@ -775,7 +726,7 @@
         "!bit7": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.7.0]}"
                     }
@@ -785,7 +736,7 @@
         "bit8": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.8.1]}"
                     }
@@ -795,7 +746,7 @@
         "!bit8": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.8.0]}"
                     }
@@ -805,7 +756,7 @@
         "bit9": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.9.1]}"
                     }
@@ -815,7 +766,7 @@
         "!bit9": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.9.0]}"
                     }
@@ -825,7 +776,7 @@
         "bit10": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.10.1]}"
                     }
@@ -835,7 +786,7 @@
         "!bit10": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.10.0]}"
                     }
@@ -845,7 +796,7 @@
         "bit11": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.11.1]}"
                     }
@@ -855,7 +806,7 @@
         "!bit11": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.11.0]}"
                     }
@@ -865,7 +816,7 @@
         "bit12": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.12.1]}"
                     }
@@ -875,7 +826,7 @@
         "!bit12": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.12.0]}"
                     }
@@ -885,7 +836,7 @@
         "bit13": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.13.1]}"
                     }
@@ -895,7 +846,7 @@
         "!bit13": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.13.0]}"
                     }
@@ -905,7 +856,7 @@
         "bit14": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.14.1]}"
                     }
@@ -915,7 +866,7 @@
         "!bit14": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.14.0]}"
                     }
@@ -925,7 +876,7 @@
         "bit15": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.15.1]}"
                     }
@@ -935,7 +886,7 @@
         "!bit15": {
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
-                "damage": {
+                "killing_blow": {
                     "source_entity": {
                         "nbt": "{Tags:[entityid.15.0]}"
                     }
@@ -974,6 +925,7 @@
             "is_lightning",
             "is_player_attack",
             "is_projectile",
+            "mace_smash",
             "no_anger",
             "no_impact",
             "no_knockback",
